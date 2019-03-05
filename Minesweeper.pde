@@ -5,8 +5,8 @@ public final static int NUM_ROWS = 20;
 public final static int NUM_COLS = 20;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> bombs; //ArrayList of just the minesweeper buttons that are mined
-bombs = new ArrayList <MSButton>();
-
+int rows = 20;
+int columns = 20;
 void setup ()
 {
     size(400, 400);
@@ -27,15 +27,16 @@ void setup ()
 }
 public void setBombs()
 {
-    for(int i = 0; i < 40; i++)
     final int r1 = (int)(Math.random()*20);
     final int r2 = (int)(Math.random()*20);
-    if(bombs.contains(buttons[r1][r2])) == false)
+    for(int i = 0; i < 40; i++)
+    if(bombs.contains(buttons[r1][r2]) == false)
     bombs.add(buttons[r1][r2]);
     else
     i += 1;
 }
-}
+
+
 
 public void draw ()
 {
@@ -124,17 +125,17 @@ public class MSButton
             numBombs++;
         if (isValid(row+1,col) == true && bombs.contains(buttons[row+1][col]))
             numBombs++;
-         if (isValid(row,col-1) == true && bombs.contains(buttons[row][col-1]))
+        if (isValid(row,col-1) == true && bombs.contains(buttons[row][col-1]))
             numBombs++;
-         if (isValid(row,col+1) == true && bombs.contains(buttons[row][col+1]))
+        if (isValid(row,col+1) == true && bombs.contains(buttons[row][col+1]))
             numBombs++;
-         if (isValid(row-1,col+1) == true && bombs.contains(buttons[row-1][col+1]))
+        if (isValid(row-1,col+1) == true && bombs.contains(buttons[row-1][col+1]))
             numBombs++;
-         if (isValid(row-1,col-1) == true && bombs.contains(buttons[row-1][col-1]))
+        if (isValid(row-1,col-1) == true && bombs.contains(buttons[row-1][col-1]))
             numBombs++;
-         if (isValid(row+1,col+1) == true && bombs.contains(buttons[row+1][col+1]))
+        if (isValid(row+1,col+1) == true && bombs.contains(buttons[row+1][col+1]))
             numBombs++;
-         if (isValid(row+1,col-1) == true && bombs.contains(buttons[row+1][col-1]))
+        if (isValid(row+1,col-1) == true && bombs.contains(buttons[row+1][col-1]))
             numBombs++;
         return numBombs;
     }
