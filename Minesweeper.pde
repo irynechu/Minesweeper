@@ -22,7 +22,6 @@ void setup ()
     buttons[r][c] = new MSButton(r,c);
     
     
-    
     setBombs();
 }
 public void setBombs()
@@ -75,7 +74,7 @@ public class MSButton
     private float x,y, width, height;
     private boolean clicked, marked;
     private String label;
-    
+}
     public MSButton ( int rr, int cc )
     {
          width = 400/NUM_COLS;
@@ -146,7 +145,7 @@ public class MSButton
     {    
         if (marked)
             fill(0);
-         else if( clicked && bombs.contains(this) ) 
+        else if( clicked && bombs.contains(this) ) 
              fill(255,0,0);
         else if(clicked)
             fill( 200 );
@@ -187,4 +186,4 @@ public class MSButton
         if (isValid(row+1,col-1) == true && bombs.contains(buttons[row+1][col-1]))
             numBombs++;
         return numBombs;
-    }
+        }
