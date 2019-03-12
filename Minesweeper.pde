@@ -51,10 +51,19 @@ public boolean isWon()
 public void displayLosingMessage()
 {
     //your code here
+    for (int r =0; r< NUM_ROWS; r++)
+        for(int c=0; c< NUM_COLS; c++)
+             if( buttons[r][c].isClicked() == true && bombs.contains(this) ) 
+                    buttons[NUM_ROWS/2][(NUM_COLS/2)-6].setLabel("YOU");
+                    buttons[NUM_ROWS/2][(NUM_COLS/2)-4].setLabel("LOSE");
 }
+
 public void displayWinningMessage()
 {
     //your code here
+    if( isWon() == true ) 
+                buttons[NUM_ROWS/2][(NUM_COLS/2)-2].setLabel("YOU");
+                buttons[NUM_ROWS/2][(NUM_COLS/2)].setLabel("WIN!");
 }
 
 public class MSButton
