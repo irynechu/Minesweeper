@@ -51,17 +51,21 @@ public boolean isWon()
 public void displayLosingMessage()
 {
     //your code here
-    for (int r =0; r< NUM_ROWS; r++)
-        for(int c=0; c< NUM_COLS; c++)
-             if( buttons[r][c].isClicked() == true && bombs.contains(this) ) 
-                    buttons[NUM_ROWS/2][(NUM_COLS/2)-6].setLabel("YOU");
-                    buttons[NUM_ROWS/2][(NUM_COLS/2)-4].setLabel("LOSE");
+       buttons[9][6].setLabel("Y");
+       buttons[9][7].setLabel("O");
+       buttons[9][8].setLabel("U");
+       buttons[9][10].setLabel("L");
+       buttons[9][11].setLabel("O");
+       buttons[9][12].setLabel("S");
+       buttons[9][13].setLabel("E");
+
 }
 
 public void displayWinningMessage()
 {
     //your code here
     if( isWon() == true ) 
+    buttons[9][6].setLabel("Y");
                 buttons[NUM_ROWS/2][(NUM_COLS/2)-2].setLabel("YOU");
                 buttons[NUM_ROWS/2][(NUM_COLS/2)].setLabel("WIN!");
 }
