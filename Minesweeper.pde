@@ -41,11 +41,11 @@ public void draw ()
 public boolean isWon()
 {
     //your code here
-    //for (int r = 0; r < NUM_ROWS; r++)
-    //for(int c = 0; c < NUM_COLS; c++)
-   // if(buttons[r][c].isClicked() == false)
+    for (int r = 0; r < NUM_ROWS; r++)
+    for(int c = 0; c < NUM_COLS; c++)
+    if(buttons[r][c].isClicked() == false)
     return false;
-   // return true;
+    return true;
    
 }
 public void displayLosingMessage()
@@ -66,8 +66,12 @@ public void displayWinningMessage()
     //your code here
     if( isWon() == true ) 
     buttons[9][6].setLabel("Y");
-                buttons[NUM_ROWS/2][(NUM_COLS/2)-2].setLabel("YOU");
-                buttons[NUM_ROWS/2][(NUM_COLS/2)].setLabel("WIN!");
+    buttons[9][7].setLabel("O");
+    buttons[9][8].setLabel("U");
+    buttons[9][10].setLabel("W");
+    buttons[9][11].setLabel("I");
+    buttons[9][12].setLabel("N");
+    
 }
 
 public class MSButton
